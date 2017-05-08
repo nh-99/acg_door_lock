@@ -1,0 +1,10 @@
+[[Unit]
+Description=The door lock service
+
+[Service]
+WorkingDirectory=/opt/acg_door_lock
+ExecStart=/usr/local/bin/gunicorn acgdoorlock:app --bind 0.0.0.0:5000
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
